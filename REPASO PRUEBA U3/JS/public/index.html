@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Art Gallery JS MVC</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #E0E0E0; padding: 20px; }
+        .panel { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        input { padding: 5px; margin: 5px; }
+        button { padding: 8px 15px; cursor: pointer; color: white; border: none; border-radius: 4px; }
+        .btn-create { background-color: #4CAF50; }
+        .btn-update { background-color: #2196F3; }
+        .btn-delete { background-color: #F44336; }
+        .btn-clear { background-color: #777; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        tr:hover { background-color: #f1f1f1; cursor: pointer; }
+        .selected { background-color: #d1e7dd !important; }
+    </style>
+</head>
+<body>
+
+    <h1>Art Gallery Management (JS MVC)</h1>
+
+    <div class="panel">
+        <div>
+            <label>Name:</label> <input type="text" id="txtName">
+            <label>Base Price ($):</label> <input type="number" id="txtPrice">
+            <label>ID:</label> <input type="text" id="txtId">
+            <button onclick="findPainting()">Find</button>
+        </div>
+        <div>
+            <label>Colors (comma separated):</label> 
+            <input type="text" id="txtColors" style="width: 300px;">
+        </div>
+        <div style="margin-top: 15px;">
+            <button class="btn-create" onclick="createPainting()">Create New</button>
+            <button class="btn-update" onclick="updatePainting()">Update</button>
+            <button class="btn-delete" onclick="deletePainting()">Delete</button>
+            <button class="btn-clear" onclick="clearForm()">Clear Form</button>
+        </div>
+    </div>
+
+    <h3>Inventory:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Colors</th>
+                <th>Price ($)</th>
+                <th>Price + IVA ($)</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
